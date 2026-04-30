@@ -40,10 +40,10 @@ const attendanceSummary = [
 ];
 
 const upcomingExams = [
-  { subject: "Mathematics", className: "Class 10-A", date: "Apr 30", time: "09:30 AM", status: "Scheduled" },
-  { subject: "Physics", className: "Class 12-B", date: "May 02", time: "10:00 AM", status: "Draft" },
-  { subject: "English", className: "Class 8-C", date: "May 04", time: "11:15 AM", status: "Scheduled" },
-  { subject: "Computer Science", className: "Class 11-A", date: "May 06", time: "09:00 AM", status: "Review" },
+  { examType: "Monthly Exam", className: "Class 10-A", date: "Apr 30", time: "09:30 AM" },
+  { examType: "Mid-Term Exam", className: "Class 12-B", date: "May 02", time: "10:00 AM" },
+  { examType: "Unit Test", className: "Class 8-C", date: "May 04", time: "11:15 AM" },
+  { examType: "Quarterly Exam", className: "Class 11-A", date: "May 06", time: "09:00 AM" },
 ];
 
 const events = [
@@ -154,26 +154,22 @@ export const Dashboard = () => {
               <button className="text-sm font-semibold text-indigo-600" type="button">View all</button>
             </div>
             <div className="overflow-x-auto">
-              <table className="w-full min-w-[660px] text-left text-sm">
+              <table className="w-full min-w-[560px] text-left text-sm">
                 <thead className="bg-slate-50 text-xs uppercase tracking-wide text-slate-400">
                   <tr>
-                    <th className="px-5 py-3 font-semibold">Subject</th>
+                    <th className="px-5 py-3 font-semibold">Exam</th>
                     <th className="px-5 py-3 font-semibold">Class</th>
                     <th className="px-5 py-3 font-semibold">Date</th>
                     <th className="px-5 py-3 font-semibold">Time</th>
-                    <th className="px-5 py-3 font-semibold">Status</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-slate-100">
                   {upcomingExams.map((exam) => (
-                    <tr key={`${exam.subject}-${exam.className}`} className="text-slate-700">
-                      <td className="px-5 py-4 font-semibold text-slate-950">{exam.subject}</td>
+                    <tr key={`${exam.examType}-${exam.className}`} className="text-slate-700">
+                      <td className="px-5 py-4 font-semibold text-slate-950">{exam.examType}</td>
                       <td className="px-5 py-4">{exam.className}</td>
                       <td className="px-5 py-4">{exam.date}</td>
                       <td className="px-5 py-4">{exam.time}</td>
-                      <td className="px-5 py-4">
-                        <span className="rounded bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600">{exam.status}</span>
-                      </td>
                     </tr>
                   ))}
                 </tbody>

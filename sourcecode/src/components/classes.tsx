@@ -17,7 +17,7 @@ import {
   X,
 } from "lucide-react";
 
-type Student = {
+export type Student = {
   id: string;
   admissionNo: string;
   name: string;
@@ -33,7 +33,7 @@ type Student = {
   marks: { exam: string; subject: string; marks: number; grade: string }[];
 };
 
-type ClassRoom = {
+export type ClassRoom = {
   id: string;
   className: string;
   section: string;
@@ -54,7 +54,7 @@ type ExamReport = {
   grade: string;
 };
 
-const classRooms: ClassRoom[] = [
+export const classRooms: ClassRoom[] = [
   {
     id: "class-10-a",
     className: "Class 10",
@@ -248,10 +248,10 @@ const classRooms: ClassRoom[] = [
   },
 ];
 
-const findClassRoom = (classId?: string) =>
+export const findClassRoom = (classId?: string) =>
   classRooms.find((classRoom) => classRoom.id === classId);
 
-const findStudent = (classId?: string, studentId?: string) => {
+export const findStudent = (classId?: string, studentId?: string) => {
   const classRoom = findClassRoom(classId);
   const student = classRoom?.students.find((item) => item.id === studentId);
 

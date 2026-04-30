@@ -12,7 +12,7 @@ import {
   UsersRound,
 } from "lucide-react";
 
-type Teacher = {
+export type Teacher = {
   id: string;
   name: string;
   subject: string;
@@ -55,7 +55,7 @@ const makeAvatar = (name: string, start: string, end: string) => {
   return `data:image/svg+xml,${encodeURIComponent(svg)}`;
 };
 
-const teachers: Teacher[] = [
+export const teachers: Teacher[] = [
   {
     id: "tch-1024",
     name: "Ananya Sharma",
