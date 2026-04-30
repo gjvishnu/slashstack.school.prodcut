@@ -1,12 +1,15 @@
 import { Outlet } from "react-router-dom";
+import { Sidebar } from "../sidebar";
 
 export const Body = () => {
   return (
-    <div className="h-screen w-full flex">
-      <div className="md:w-[20%] lg:w-[15%] w-0  h-full   border  "></div>
+    <div className="flex h-screen w-full overflow-hidden bg-[#eef2f6]">
+      <div className="h-screen w-64 shrink-0">
+        <Sidebar />
+      </div>
 
-      <div className="flex-1 h-full min-h-0 overflow-y-auto">
-         <Outlet/>
+      <div className="flex-1 overflow-y-auto">
+        <Outlet />
       </div>
     </div>
   );
